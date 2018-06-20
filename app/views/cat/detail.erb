@@ -1,25 +1,28 @@
 <br>
-<div class="card mx-auto border border-dark .bg-light" style="width: 550px;">
+<div class="card mx-auto border border-dark .bg-light" style="width: 550px">
   <br>
-  <img src="<%= "/cats/#{@cat.image}" %>" class="mx-auto" width="450" height="450">
+  <img src="<%= "/cats/#{@cat.image}" %>" class="mx-auto" width="450" height="450" style="object-fit: cover">
   <div class="card-body mx-auto">
-    <h4 class="card-title"><%= @cat.name %></h4>
+    <h1 class="card-title"><%= @cat.name %></<h1></h1>
     <p class="card-text">
-      <label>名前: </label>
+      <label class="badge badge-dark" style="font-size: 15px">名前 </label>
         <%= @cat.name %>
       <br>
-      <label>誕生日: </label>
+      <label class="badge badge-dark" style="font-size: 15px">誕生日 </label>
         <%= @cat.birth_date %>
       <br>
-      <label>性別: </label>
+      <label class="badge badge-dark" style="font-size: 15px">性別 </label>
         <%= @cat.gender %>
       <br>
-      <label>品種: </label> 
+      <label class="badge badge-dark" style="font-size: 15px">品種 </label>
         <%= @breed.name %>
       <br>
-      <label>お店: </label> 
+      <label class="badge badge-dark" style="font-size: 15px">お店 </label>
         <%= @cafe.name %>
       <br>
     </p>
-    <a href="<%= "#{@cafe.homepage}" %>" class="btn btn-primary" target="_blank">お店のHPを見る</a>
+    <a href="<%= "#{@cafe.homepage}" %>" class="btn btn-info" target="_blank">お店のHPを見る</a>
+    <a href="<%= "/cat/cafe/#{@cafe.id}" %>" class="btn btn-info">このお店の猫たちをみる</a>
+    <br><br>
+    <button type="button" class="btn btn-primary" onclick="javascript:window.history.back(-1);return false;">戻る</button>
   </div>

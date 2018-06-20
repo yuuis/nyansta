@@ -16,7 +16,14 @@ insert into cats(name, birth_date, gender, image, breed_id, cafe_id) values("シ
 insert into cats(name, birth_date, gender, image, breed_id, cafe_id) values("パン", "2018-01-30", "♂", "0015.jpg", 6, 2);
 insert into cats(name, birth_date, gender, image, breed_id, cafe_id) values("殿", "2017-11-16", "♂", "0016.jpg", 6, 2);
 insert into cats(name, birth_date, gender, image, breed_id, cafe_id) values("みこし", "2008-12-16", "♀", "0017.jpg", 8, 7);
-
+insert into cats(name, birth_date, gender, image, breed_id, cafe_id) values("コタロー", "2008-04-13", "♂", "0018.jpg", 8, 8);
+insert into cats(name, birth_date, gender, image, breed_id, cafe_id) values("ミッチェル", "2009-06-02", "♂", "0019.jpg", 11, 8);
+insert into cats(name, birth_date, gender, image, breed_id, cafe_id) values("ウィン", "2016-09-15", "♂", "0020.jpg", 12, 8);
+insert into cats(name, birth_date, gender, image, breed_id, cafe_id) values("杏仁", "2009-05-02", "♀", "0021.jpg", 11, 8);
+insert into cats(name, birth_date, gender, image, breed_id, cafe_id) values("乙姫", "2017-12-30", "♀", "0022.jpg", 13, 10);
+insert into cats(name, birth_date, gender, image, breed_id, cafe_id) values("くるみ", "2018-02-17", "♀", "0023.jpg", 3, 10);
+insert into cats(name, birth_date, gender, image, breed_id, cafe_id) values("佐助", "2017-06-08", "♂", "0024.jpg", 7, 10);
+insert into cats(name, birth_date, gender, image, breed_id, cafe_id) values("ささみ", "2016-01-11", "♀", "0025.jpg", 3, 10);
 
 
 # cafes
@@ -27,6 +34,9 @@ insert into cafes(name, address, homepage, a_hour_price, prefucture) values ("�
 insert into cafes(name, address, homepage, a_hour_price, prefucture) values ("猫カフェMOCHA　イオンレイクタウン店", "埼玉県越谷市レイクタウン3-1-1", "http://catmocha.jp/aeonlaketown/", 1200, "saitama");
 insert into cafes(name, address, homepage, a_hour_price, prefucture) values ("猫カフェMOCHA　渋谷店", "東京都渋谷区宇田川町32-12 アソルティ渋谷8F", "http://catmocha.jp/shibuya/", 1200, "tokyo");
 insert into cafes(name, address, homepage, a_hour_price, prefucture) values ("きゃりこ　新宿店", "新宿区歌舞伎町1-16-2　富士ビルディング5/6F", "http://catcafe.jp/shop_shinjyuku.html", 1000, "tokyo");
+insert into cafes(name, address, homepage, a_hour_price, prefucture) values ("らぶねこ", "札幌市中央区南2条西5丁目26-17 第一北野家ビル5F", "http://www.loveneko.jp/access/", 960, "hokkaido");
+insert into cafes(name, address, homepage, a_hour_price, prefucture) values ("Neko Cafe Keurig", "福岡市中央区今泉1－22－21 Jolisビル 4F", "http://theloft.nekocafe-keurig.com/", 1000, "hukuoka");
+insert into cafes(name, address, homepage, a_hour_price, prefucture) values ("猫カフェ〜美猫〜", "福岡市中央区港3-3-20", "https://minatoneko.wixsite.com/bineko/", 1000, "hukuoka");
 
 
 
@@ -40,4 +50,7 @@ insert into breeds(name) values ("スコティッシュ");
 insert into breeds(name) values ("マンチカン");
 insert into breeds(name) values ("アメリカンショートヘア");
 insert into breeds(name) values ("ブリティッシュショートヘア");
-insert into breeds(name) values ("ミヌエット");
+insert into breeds(name) values ("ミヌエット"); --10
+insert into breeds(name) values ("ミックス");
+insert into breeds(name) values ("ノルウェージャンフォレストキャット");
+insert into breeds(name) values ("ペルシャ");

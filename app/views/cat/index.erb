@@ -1,36 +1,13 @@
+<div style="margin-right: 100px;margin-left: 100px;margin-top: 20px"><span class="badge badge-info" style="font-size: 20px"> <%= @message %> </span></div>
 <div style="margin-right: 100px;margin-left: 100px">
 <div class="card-group">
+<br>
 <% @cats.each do |cat| %>
   <a href="/cat/<%= cat.id %>">
-    <div class="card" style="width: 300px; margin-right: 20px; margin-top: 20px">
-      <img class="card-img-top" src="<%= "/cats/#{cat.image}" %>" alt="Card image cap" width="300" height="300">
+    <div class="card" style="width: 300px; margin-right: 20px; margin-top: 20px" style="object-fit: cover">
+      <img class="card-img-top" src="<%= "/cats/#{cat.image}" %>" alt="Card image cap" width="300" height="300" style="object-fit: cover">
     </div>
   </a>
 <% end %>
 </div>
 </div>
-
-<script type="text/javascript">
-  let button = document.getElementById("search");
-  // button.addEventListener("click", search, false);
-
-  function search() {
-    let prefucture = document.getElementById("prefucture").value;
-    let xhr = new XMLHttpRequest();
-    xhr.open("GET", "http://localhost:3000/cat_search/"+prefucture, false);
-    xhr.send();
-
-    xhr.onreadystatechange = function() {
-      switch (xhr.readyState) {
-        case 4: 
-          if(xhr.status == 200) {
-            let result = document.getElementById("result");
-            result.innerHTML = xhr.responseText;
-          } else {
-              alert("Failed");
-          }
-          break;
-        }
-    };
-  }
-</script>
