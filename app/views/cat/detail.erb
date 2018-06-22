@@ -21,8 +21,40 @@
         <%= @cafe.name %>
       <br>
     </p>
-    <a href="<%= "#{@cafe.homepage}" %>" class="btn btn-info" target="_blank">お店のHPを見る</a>
-    <a href="<%= "/cat/cafe/#{@cafe.id}" %>" class="btn btn-info">このお店の猫たちをみる</a>
+    <a href="<%= "#{@cafe.homepage}" %>" class="btn btn-info" target="_blank" style="width: 400px">お店のHPを見る</a>
     <br><br>
     <button type="button" class="btn btn-primary" onclick="javascript:window.history.back(-1);return false;">戻る</button>
   </div>
+</div>
+
+<% if @same_breed_cats != nil %>
+  <div style="margin-right: 100px; margin-left: 100px; margin-top: 20px" ><span class="badge badge-info" style="font-size: 20px">同じ品種のねこたち</span></div>
+  <div class="card-group" style="margin-right: 100px;margin-left: 100px">
+    <br>
+    <% @same_breed_cats.each do |cat| %>
+      <% if cat.id != @cat.id %>
+        <a href="/cat/<%= cat.id %>">
+          <div class="card" style="width: 300px; margin-right: 20px; margin-top: 20px" style="object-fit: cover">
+            <img class="card-img-top" src="<%= "/cats/#{cat.image}" %>" alt="Card image cap" width="300" height="300" style="object-fit: cover">
+          </div>
+        </a>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>
+<br>
+<% if @same_cafe_cats != nil %>
+  <div style="margin-right: 100px; margin-left: 100px; margin-top: 20px" ><span class="badge badge-info" style="font-size: 20px">同じお店のねこたち</span></div>
+  <div class="card-group" style="margin-right: 100px;margin-left: 100px">
+    <br>
+    <% @same_cafe_cats.each do |cat| %>
+      <% if cat.id != @cat.id %>
+        <a href="/cat/<%= cat.id %>">
+          <div class="card" style="width: 300px; margin-right: 20px; margin-top: 20px" style="object-fit: cover">
+            <img class="card-img-top" src="<%= "/cats/#{cat.image}" %>" alt="Card image cap" width="300" height="300" style="object-fit: cover">
+          </div>
+        </a>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>
