@@ -45,6 +45,16 @@ class CatController < ApplicationController
       @message = @breed.name + "のねこたち"
       render :index
     end
+
+    # 年齢での検索
+    if params[:age]
+      @cats_all = Cat.all()
+      @cats_all.each do |cat| 
+        if Cat.age(cat.birth_date)
+
+        end
+      end
+    end
   end
 
   def search_for_prefucture_and_breed

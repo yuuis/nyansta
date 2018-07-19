@@ -25,45 +25,80 @@
         </ul>
       </div>
       <div class="text-right" style="margin-right: 100px">
-        <!-- 右詰め -->
+        <!-- 品種 -->
         <select name="breed" id="breed" class="btn btn-default" style="width: 150px">
           <option value="">品種を選択</option>
           <% @breeds.each do |breed| %>
             <option value="<%= breed.id%>"><%= breed.name%></option>
           <% end %>
         </select>
+
+        <!-- 年齢 -->
+        <!-- <select name="start_age" id="start_age" class="btn btn-default" style="width: 150px">
+          <option value="">年齢を選択</option>  
+          <% 0.upto(10) do |num|%>
+            <% if num == 0 %>
+              <option value="0">1才未満</option>  
+            <% else%>
+              <option value="#{num}..#{num+2}"><%= num %>~<%= num+2 %>才</option>
+              <% num += 2 %>
+            <% end %>
+          <% end %>
+        </select> -->
+
+        <!-- 地域 -->
         <select name="prefucture" id="prefucture" class="btn btn-default" style="width: 150px">
           <option value="">地域を選択</option>
-          <option value="all">全部</option>
+          <option value="all">全地域</option>
           <optgroup label="北海道">
             <option value="hokkaido">北海道</option>
           </optgroup>
-          <optgroup label="関東">
-            <option value="tokyo">東京都</option>
-            <option value="saitama">埼玉県</option>
+          <optgroup label="東北">
+            <option value="aomori">青森県</option>
+            <option value="akita">秋田県</option>
+            <option value="iwate">岩手県</option>
+            <option value="yamagata">山形県</option>
+            <option value="miyagi">宮城県</option>
+            <option value="hukushima">福島県</option>
           </optgroup>
-          <optgroup label="関西">
+          <optgroup label="関東">
+            <option value="gunma">群馬県</option>
+            <option value="tiba">千葉県</option>
+            <option value="tochigi">栃木県</option>
+            <option value="ibaraki">茨城県</option>
+            <option value="saitama">埼玉県</option>
+            <option value="tokyo">東京都</option>
+            <option value="kanagawa">神奈川県</option>
+          </optgroup>
+          <optgroup label="中部">
             <option value="aiti">愛知県</option>
+          </optgroup>
+          <optgroup label="近畿">
             <option value="kyoto">京都府</option>
+          </optgroup>
+          <optgroup label="中国">
+          </optgroup>
+          <optgroup label="四国">
+            <option value="kochi">高知県</option>
           </optgroup>
           <optgroup label="九州">
             <option value="hukuoka">福岡県</option>
           </optgroup>
         </select>
-        　<button class="btn btn-default" id="search" onclick="search_cat()">検索</button>
+        　<button class="btn btn-info" id="search" onclick="search_cat()">検索</button>
       </div>
       <script type="text/javascript"> 
         function search_cat() {
           let prefucture = document.getElementById("prefucture").value;
           let breed = document.getElementById("breed").value;
+          // let age = document.getElementById("age").value;
 
           if(prefucture != "" && breed != "") {
-            console.log("/cat/" + prefucture + "/" + breed);
             location.href= "/cat/" + prefucture + "/" + breed;
           } else if(prefucture != ""){
             if(prefucture === "all") {
               location.href= "/";
-            } else{
+            } else {
               location.href= "/cat/prefucture/" + prefucture;
             }
           } else if(breed != "") {
