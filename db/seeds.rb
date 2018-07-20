@@ -1,3 +1,4 @@
+
 Cafe.create(name: "猫カフェMOCHA　池袋西口店", address: "東京都豊島区西池袋1-15-6-3F", homepage: "http://catmocha.jp/ikebukuro/", a_hour_price: 1200, prefucture: "tokyo")
 Cafe.create(name: "猫カフェMOCHA　京都河原町店", address: "京都府京都市中京区河原町通三条下ル大黒町58　mina　4F", homepage: "http://catmocha.jp/kawaramachi/", a_hour_price: 1200, prefucture: "kyoto")
 Cafe.create(name: "猫カフェMOCHA　名古屋栄店", address: "愛知県名古屋市中区栄3-32-6　BECOME　SAKAE　2F", homepage: "http://catmocha.jp/nagoya/", a_hour_price: 1200, prefucture: "aiti")
