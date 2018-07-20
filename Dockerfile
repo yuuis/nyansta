@@ -12,5 +12,7 @@ COPY Gemfile.lock $APP_ROOT
 RUN bundle install
 COPY . $APP_ROOT
 
+RUN bundle exec bin/rails db:migrate db:seed
+
 RUN bundle exec rails assets:precompile
 CMD ["bash", "scripts/start.sh"]
