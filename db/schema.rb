@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2018_06_08_084756) do
     t.text "address"
     t.text "homepage"
     t.integer "a_hour_price"
-    t.text "prefecture"
+    t.integer "prefecture"
   end
 
   create_table "cats", force: :cascade do |t|

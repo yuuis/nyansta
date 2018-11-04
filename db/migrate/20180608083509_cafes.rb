@@ -5,7 +5,7 @@ class Cafes < ActiveRecord::Migration[5.2]
       t.text :address
       t.text :homepage
       t.integer :a_hour_price
-      t.text :prefecture
+      t.integer :prefecture
     end
   end
 end
