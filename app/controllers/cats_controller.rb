@@ -21,32 +21,11 @@ class CatsController < ApplicationController
 
   def search
     @breeds = Breed.all
-
-    # 県での検索
-    if params[:prefecture]
-      @cafe = Cafe.where(prefecture: params[:prefecture])
-      @cats = Cat.where(cafe_id: @cafe.ids)
-      @message = toJP(params[:prefecture]) + "のねこたち"
-      render :index
-    end
-
-    # 品種での検索
-    if params[:breed]
-      @breed = Breed.find(params[:breed])
-      @cats = Cat.where(breed: params[:breed])
-      @message = @breed.name + "のねこたち"
-      render :index
-    end
-
-    # 年齢での検索
-    # if params[:age]
-    #   @cats_all = Cat.all()
-    #   @cats_all.each do |cat| 
-    #     if Cat.age(cat.birth_date)
-
-    #     end
-    #   end
-    # end
+    @message = (params[:prefecture].present? ? Cafe.prefectures.invert[params[:prefecture].to_i] + "の" : "")
+    @message << (params[:breed].present? ? Breed.find(params[:breed]).name + "の" : "")
+    @cats = Cat.search_by_breed(params[:breed]).search_by_prefecture(params[:prefecture])
+    @message << (@cats.present? ? "ねこたち" : "ねこは見つかりませんでした")
+    render :index
   end
 
   def search_for_prefecture_and_breed
