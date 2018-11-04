@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
-  def toJP(prefucture) 
-    case prefucture
+  def toJP(prefecture)
+    case prefecture
       when "hokkaido" then
         return "北海道"
       when "tokyo" then

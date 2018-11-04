@@ -3,7 +3,7 @@
 <div class="card-group">
 <br>
 <% @cats.each do |cat| %>
-  <a href="/cat/<%= cat.id %>">
+  <a href="/cats/<%= cat.id %>">
     <div class="card" style="width: 300px; margin-right: 20px; margin-top: 20px" style="object-fit: cover">
       <img class="card-img-top" src="<%= "/cats/#{cat.image}" %>" alt="Card image cap" width="300" height="300" style="object-fit: cover">
     </div>

@@ -47,7 +47,7 @@
         </select> -->
 
         <!-- 地域 -->
-        <select name="prefucture" id="prefucture" class="btn btn-default" style="width: 150px">
+        <select name="prefecture" id="prefecture" class="btn btn-default" style="width: 150px">
           <option value="">地域を選択</option>
           <option value="all">全地域</option>
           <optgroup label="北海道">
@@ -89,20 +89,20 @@
       </div>
       <script type="text/javascript"> 
         function search_cat() {
-          let prefucture = document.getElementById("prefucture").value;
+          let prefecture = document.getElementById("prefecture").value;
           let breed = document.getElementById("breed").value;
           // let age = document.getElementById("age").value;
 
-          if(prefucture != "" && breed != "") {
-            location.href= "/cat/" + prefucture + "/" + breed;
-          } else if(prefucture != ""){
-            if(prefucture === "all") {
+          if(prefecture != "" && breed != "") {
+            location.href = "/cats/search?prefecture=" + prefecture + "&breed=" + breed;
+          } else if(prefecture != ""){
+            if(prefecture === "all") {
               location.href= "/";
             } else {
-              location.href= "/cat/prefucture/" + prefucture;
+              location.href = "/cats/search?prefecture=" + prefecture;
             }
           } else if(breed != "") {
-            location.href= "/cat/breed/" + breed;
+            location.href = "/cats/search?breed=" + breed;
           }
         }
       </script>
