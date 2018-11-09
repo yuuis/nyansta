@@ -27,24 +27,4 @@ class CatsController < ApplicationController
     @message << (@cats.present? ? "ねこたち" : "ねこは見つかりませんでした")
     render :index
   end
-
-  def search_for_prefecture_and_breed
-    @breeds = Breed.all
-
-    # 県と品種での複合検索
-    if params[:prefecture] && params[:breed_id]
-      @cats = Array.new()
-
-      @breed = Breed.find_by(id: params[:breed_id])
-      @cafe = Cafe.where(prefecture: params[:prefecture])
-      @cats = Cat.where(cafe_id: @cafe.ids).where(breed_id: params[:breed_id])
-      if(!@cats.empty?)
-        @message = toJP(params[:prefecture]) + "の" +  @breed.name + "のねこたち"
-      else 
-        @message = toJP(params[:prefecture]) + "の" +  @breed.name + "のねこは見つかりませんでした"
-      end
-      render :index
-    end
-  end
-
 end
