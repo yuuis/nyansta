@@ -7,6 +7,7 @@ class Cats < ActiveRecord::Migration[5.2]
       t.text :image
       t.integer :breed_id
       t.integer :cafe_id
+      t.timestamps
     end
   end
 end
