@@ -14,6 +14,8 @@ ActiveRecord::Schema.define(version: 2018_06_08_084756) do
 
   create_table "breeds", force: :cascade do |t|
     t.text "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "cafes", force: :cascade do |t|
@@ -22,6 +24,8 @@ ActiveRecord::Schema.define(version: 2018_06_08_084756) do
     t.text "homepage"
     t.integer "a_hour_price"
     t.integer "prefecture"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "cats", force: :cascade do |t|
@@ -31,6 +35,8 @@ ActiveRecord::Schema.define(version: 2018_06_08_084756) do
     t.text "image"
     t.integer "breed_id"
     t.integer "cafe_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
